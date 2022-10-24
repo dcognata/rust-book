@@ -1,11 +1,18 @@
+CC=rustc
+FMT=rustfmt
+source_files=./src
+
 exec:
 	./main
 
 cc:
-	rustc main.rs
+	$(CC) $(source_files)/main.rs
 
 lint:
-	rustfmt --check */*.rs
+	$(FMT) --check */*.rs
 
 lint-fix:
-	rustfmt */*.rs
+	$(FMT) */*.rs
+
+clean:
+	rm ./main
